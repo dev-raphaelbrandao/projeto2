@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faturação - D'Moraes Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> <!-- Biblioteca para exportação Excel -->
+</head>
+<body>
+    <div class="container">
+        <h1>Controle de Faturação</h1>
+        
+        <!-- Seção de Entradas e Saídas -->
+        <div class="finance-section">
+            <form id="financeForm">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required>
+
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select>
+
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" step="0.01" required>
+
+                <button type="button" onclick="adicionarTransacao()">Adicionar Transação</button>
+            </form>
+
+            <div id="transacoes">
+                <h3>Lista de Transações</h3>
+                <table id="tabelaTransacoes">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p><strong>Saldo Total:</strong> R$ <span id="saldoTotal">0.00</span></p>
+                <button onclick="exportarExcel()">Exportar para Excel</button>
+            </div>
+        </div>
+
+        <!-- Seção de Emissão de Fatura
+        <div class="invoice-section">
+            <h2>Emitir Fatura</h2>
+            <form id="invoiceForm">
+                <label for="cliente">Nome do Cliente:</label>
+                <input type="text" id="cliente" name="cliente" required>
+
+                <label for="servico">Serviço:</label>
+                <select id="servico" name="servico" required>
+                    <option value="manicure">Manicure</option>
+                    <option value="pedicure">Pedicure</option>
+                    <option value="esmaltação">Esmaltação</option>
+                    <option value="spa">SPA das mãos</option>
+                </select>
+
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" name="preco" step="0.01" required>
+
+                <button type="button" onclick="emitirFatura()">Emitir Fatura</button>
+            </form>
+            <div id="faturaEmitida"></div>
+        </div>-->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
